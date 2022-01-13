@@ -29,8 +29,9 @@ def server(host, port):
 
 def client(host, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((host, port))  
+    print(sock.connect_ex((host, port)))
 
+    
     while True:
         message = input("Enter Message: ")
         message = message.encode('ascii')
